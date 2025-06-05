@@ -14,17 +14,6 @@ import routes from './routes'
 import { limiter } from './middlewares/limiter'
 
 const { PORT = 3000 } = process.env
-<<<<<<< HEAD
-const { ORIGIN_ALLOW = 'http://localhost:5173' } = process.env
-const app = express()
-
-app.use(cookieParser())
-
-app.use(cors())
-app.use(cors({ origin: ORIGIN_ALLOW, credentials: true }));
-app.use(express.static(path.join(__dirname, 'public')));
-
-=======
 export const ORIGIN_ALLOW = process.env.ORIGIN_ALLOW || 'http://localhost:5173'
 const app = express()
 
@@ -37,7 +26,6 @@ app.use(
         allowedHeaders: ['Authorization', 'Content-Type', 'X-CSRF-Token'],
     })
 )
->>>>>>> main
 app.use(serveStatic(path.join(__dirname, 'public')))
 app.use(urlencoded({ extended: true }))
 app.use(mongoSanitize())

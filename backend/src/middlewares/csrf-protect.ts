@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import { doubleCsrf } from 'csrf-csrf'
 import { CSRF_SECRET, CSRF_COOKIE_NAME } from '../config'
 
